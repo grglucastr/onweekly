@@ -10,7 +10,7 @@ class StatusController extends Controller
 
   public function showAllStatus()
   {
-    return response()->json(Status::all());
+    return response()->json(Status::where('active', 1)->get());
   }
 
   public function showOneStatus($id)
