@@ -32,8 +32,13 @@ $router->group(['prefix' => 'api'], function() use ($router){
         $router->get('/', ['uses' => 'TypeController@showAllTypes']);
         $router->get('/{id}', ['uses' => 'TypeController@showOneType']);
         $router->post('/', ['uses' => 'TypeController@addType']);
-        $router->put('/{id}', ['uses' => 'TypeController@updateType']);
-        
+        $router->put('/{id}', ['uses' => 'TypeController@updateType']);        
+    });
+
+    $router->group(['prefix' => 'requesters'], function() use($router){
+        $router->get('/', ['uses' => 'RequesterController@showAllRequesters']);
+        $router->get('/{id}', ['uses' => 'RequesterController@showOneRequester']);
+        $router->post('/', ['uses' => 'RequesterController@addRequester']);
     });
 
 });
