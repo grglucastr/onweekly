@@ -14,3 +14,16 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+
+$router->group(['prefix' => 'api'], function() use ($router){
+
+    $router->group(['prefix' => 'status'], function() use($router){
+        $router->get('/', ['uses' => 'StatusController@showAllStatus']);
+        $router->post('/', ['uses' => 'StatusController@addStatus']);
+        $router->get('/{id}', ['uses' => 'StatusController@showOneStatus']);
+        $router->put('/{id}', ['uses' => 'StatusController@updateStatus']);
+        $router->delete('/{id}', ['uses' => 'StatusController@deleteStatus']);
+    });
+
+});
