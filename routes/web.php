@@ -40,5 +40,13 @@ $router->group(['prefix' => 'api'], function() use ($router){
         $router->get('/{id}', ['uses' => 'RequesterController@showOneRequester']);
         $router->post('/', ['uses' => 'RequesterController@addRequester']);
     });
+    
+
+    $router->group(['prefix' => 'technicians'], function() use ($router){
+        $router->get('/', ['uses' => 'TechnicianController@showAllTechnicians']);
+        $router->get('/{id}', ['uses' => 'TechnicianController@showOneTechnician']);
+        $router->post('/', ['uses' => 'TechnicianController@addTechnician']);
+        $router->delete('/{id}', ['uses' => 'TechnicianController@deleteTechnician']);
+    });
 
 });
