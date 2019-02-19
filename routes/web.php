@@ -26,4 +26,14 @@ $router->group(['prefix' => 'api'], function() use ($router){
         $router->delete('/{id}', ['uses' => 'StatusController@deleteStatus']);
     });
 
+
+    $router->group(['prefix' => 'types'], function() use ($router) {
+        $router->delete('/{id}', ['uses' => 'TypeController@deleteType']);
+        $router->get('/', ['uses' => 'TypeController@showAllTypes']);
+        $router->get('/{id}', ['uses' => 'TypeController@showOneType']);
+        $router->post('/', ['uses' => 'TypeController@addType']);
+        $router->put('/{id}', ['uses' => 'TypeController@updateType']);
+        
+    });
+
 });
