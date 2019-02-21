@@ -49,4 +49,11 @@ $router->group(['prefix' => 'api'], function() use ($router){
         $router->delete('/{id}', ['uses' => 'TechnicianController@deleteTechnician']);
     });
 
+    $router->group(['prefix' => 'tasks'], function() use ($router){
+        $router->get('/', ['uses' => 'TaskController@showTasks']);
+        $router->get('/{id}', ['uses' => 'TaskController@showOneTask']);
+        $router->post('/', ['uses' => 'TaskController@addNewTask']);
+        $router->put('/{id}', ['uses' => 'TaskController@updateTask']);
+        $router->delete('/{id}', ['uses' => 'TaskController@deleteTask']);
+    });
 });
