@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class TechnicianController extends Controller 
 {
-    
+    // Save the contribution 3
     public function showAllTechnicians()
     {
         return response()->json(Technician::where('active', 1)->get());
