@@ -13,6 +13,8 @@ class CreateTasksTable extends Migration
      */
     public function up()
     {
+        
+        // Save the contribution 1
         Schema::create('tasks', function (Blueprint $table) {
             $table->increments('id');
             $table->string('subject', 100);
