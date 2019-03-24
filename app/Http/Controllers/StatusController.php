@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 class StatusController extends Controller
 {
 
+
+  // Save the contribution 2
   public function showAllStatus()
   {
     return response()->json(Status::where('active', 1)->get());
